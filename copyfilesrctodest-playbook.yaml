@@ -1,0 +1,12 @@
+-
+  name: copy file from localhost to all dest 
+  hosts: all
+  tasks:
+    -
+     name: make dir
+     command: mkdir Ansible
+    -
+     name: copy module
+     copy:
+       src: /home/ec2-user/Ansible/inventory.ini
+       dest: ~/Ansible/inventory.ini
