@@ -1,10 +1,21 @@
 -
+  name: install python3
+  hosts: all
+  become: yes
+  tasks:
+    -
+      name: update all
+      yum:
+        name: '*'
+        state: latest
+-
   name: copy file from localhost to all dest 
   hosts: all
   tasks:
     -
-     name: make dir
-     command: mkdir Ansible
+     name: makr directory
+     command: mkdir Ansible creates=Ansible
+
     -
      name: copy module
      copy:
